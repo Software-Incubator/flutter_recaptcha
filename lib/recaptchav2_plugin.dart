@@ -8,7 +8,7 @@ import 'dart:convert';
 
 class RecaptchaV2 extends StatefulWidget {
   final String apiKey;
-  final String pluginURL = "https://recaptcha-flutter-plugin.firebaseapp.com/";
+  final String pluginURL = "https://software-incubator.github.io/flutter_recaptcha/";
   final RecaptchaV2Controller controller;
 
   final ValueChanged<String> response;
