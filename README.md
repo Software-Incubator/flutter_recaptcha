@@ -1,16 +1,16 @@
-# Flutter Recaptchav2
+# Flutter Recaptcha
 
-A Flutter plugin for Google ReCaptcha V2 powered by software Incubator.
+A Flutter plugin for Google ReCaptcha powered by software Incubator.
 
 ## Getting Started
 
 This plugin requires `Webview` to use Google ReCaptcha.
-This plugin only supports **Google ReCAPTCHA V2** (working on v3)
+This plugin only supports **Google ReCAPTCHA V2** (v1 & v3 not supported)
 
 Obtain your own key & secret here: https://www.google.com/recaptcha
-Add: https://software-incubator.github.io to sites allowed
 
-Test your API KEY at: https://software-incubator.github.io/flutter_recaptcha?api_key=API_KEY
+Add: software-incubator.github.io to allowed domains
+
 
 Put `RecaptchaV2` widget into your widget tree (Usually inside `Stack` widget), **make sure it's placed on top of the tree and block all the behind interactions**:
 
@@ -38,5 +38,3 @@ Manually hide it:
 ```
 recaptchaV2Controller.hide();
 ```
-
-That's it!

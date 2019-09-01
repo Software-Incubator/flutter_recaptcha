@@ -1,8 +1,8 @@
 name: recaptchav2_plugin
 description: Google Recaptcha v2 plugin
 version: 0.0.1
-author:
-homepage:
+author: deepanshut041 <deepanshut041@gmail.com>
+homepage: https://software-incubator.github.io/flutter_recaptcha
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

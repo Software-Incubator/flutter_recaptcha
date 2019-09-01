@@ -1,6 +1,8 @@
 name: recaptchav2_plugin_example
 description: Demonstrates how to use the recaptchav2_plugin plugin.
-publish_to: 'none'
+version: 1.0.1
+author: deepanshut041 <deepanshut041@gmail.com>
+homepage: https://github.com/simolus3/f_grecaptcha
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
