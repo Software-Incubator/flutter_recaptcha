@@ -16,6 +16,6 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    expect(await Recaptchav2Plugin.platformVersion, '42');
+
   });
 }
