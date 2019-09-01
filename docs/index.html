@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="content-language" content="en"/>
+
+    <!-- SEO -->
+    <title>RECAPTCHA - FLUTTER PLUGIN</title>
+    <meta name="description" content="A Flutter plugin for Google ReCaptcha">
+    <meta name="keywords" content="flutter, recaptcha, plugin, captcha">
+    <meta name="author" content="http://silive.in">
+
+    <!-- Social Sharing Info -->
+    <meta property="og:url" content=""/>
+    <meta property="og:title" content="RECAPTCHA - FLUTTER PLUGIN"/>
+    <meta property="og:description" content="A Flutter plugin for Google ReCaptcha"/>
+    <meta property="og:image" content=".../assets/images/share.jpg"/>
+    <meta property="og:image:width" content="1200"/> <!-- Full HD: WIDTH -->
+    <meta property="og:image:height" content="630"/> <!-- Full HD: HEIGHT -->
+    <!-- <meta property="fb:app_id" content="102048594658" /> -->
+
+    <!-- Viewport and mobile -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+
+    <!-- FAVICON -->
+    <link rel="image_src" href="./images/favicon.ico"/>
+    <link rel="icon" type="image/gif" href="./images/favicon.ico"/>
+
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+            async defer>
+    </script>
+</head>
+
+<body>
+<center>
+    <div id="html_element"></div>
+    <br/>
+    <p>Open source recaptcha for flutter by Software Incubator</p>
+    <img style="width: 10%" src="https://imgur.com/Shufxau.jpg">
+    <h3 style="font-weight: 700; color: #459fff"><a style="color: #459fff; text-decoration: none;" href="http://silive.in/">Powered By - Software Incubator</a></h3>
+</center>
+<script type="text/javascript">
+    function findGetParameter(parameterName) {
+      var result = null,
+        tmp = [];
+      location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+      return result;
+    }
+
+    var onloadCallback = function () {
+      console.log("recaptcha is ready!");
+      grecaptcha.render('html_element', {
+        'sitekey': findGetParameter("api_key"),
+        'callback': verifyCallback
+      });
+    };
+
+    function verifyCallback(token) {
+      console.log(token);
+      // console.log(grecaptcha.getResponse());
+      try {
+        RecaptchaFlutterChannel.postMessage(token);
+      } catch (e) {
+        console.log("Something wrong...");
+      }
+    }
+
+</script>
+
+</body>
+
+</html>
