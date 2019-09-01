@@ -1,4 +1,4 @@
-library flutter_recaptcha_v2;
+library recaptchav2_plugin;
 
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:flutter/foundation.dart';
