@@ -3,8 +3,6 @@ library recaptchav2_plugin;
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 
 class RecaptchaV2 extends StatefulWidget {
   final String apiKey;
