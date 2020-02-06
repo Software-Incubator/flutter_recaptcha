@@ -6,15 +6,16 @@ import 'package:flutter/material.dart';
 
 class RecaptchaV2 extends StatefulWidget {
   final String apiKey;
-  final String pluginURL = "https://software-incubator.github.io/flutter_recaptcha/";
+  final String pluginURL;
   final RecaptchaV2Controller controller;
 
   final ValueChanged<String> response;
 
   RecaptchaV2({
     this.apiKey,
+    this.pluginURL = "https://software-incubator.github.io/flutter_recaptcha/",
     RecaptchaV2Controller controller,
-    this.response
+    this.response,
   })  : controller = controller ?? RecaptchaV2Controller(),
         assert(apiKey != null, "Google ReCaptcha API KEY is missing.");
 
