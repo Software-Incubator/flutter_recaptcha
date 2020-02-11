@@ -9,6 +9,7 @@ class RecaptchaV2 extends StatefulWidget {
   final String pluginURL;
   final RecaptchaV2Controller controller;
   final bool addCancelButton;
+  final String cancelButtonLabel;
 
   final ValueChanged<String> response;
 
