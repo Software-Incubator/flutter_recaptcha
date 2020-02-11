@@ -8,6 +8,7 @@ class RecaptchaV2 extends StatefulWidget {
   final String apiKey;
   final String pluginURL;
   final RecaptchaV2Controller controller;
+  final bool addCancelButton;
 
   final ValueChanged<String> response;
 
@@ -16,6 +17,8 @@ class RecaptchaV2 extends StatefulWidget {
     this.pluginURL = "https://software-incubator.github.io/flutter_recaptcha/",
     RecaptchaV2Controller controller,
     this.response,
+    this.addCancelButton = true,
+    this.cancelButtonLabel = "CANCEL RECAPTCHA",
   })  : controller = controller ?? RecaptchaV2Controller(),
         assert(apiKey != null, "Google ReCaptcha API KEY is missing.");
 
@@ -89,25 +92,26 @@ class _RecaptchaV2State extends State<RecaptchaV2> {
             webViewController = _controller;
           },
         ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: SizedBox(
-            height: 60,
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                Expanded(
-                  child: RaisedButton(
-                    child: Text("CANCEL RECAPTCHA"),
-                    onPressed: () {
-                      controller.hide();
-                    },
+        if (widget.addCancelButton)
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: SizedBox(
+              height: 60,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: <Widget>[
+                  Expanded(
+                    child: RaisedButton(
+                      child: Text(widget.cancelButtonLabel),
+                      onPressed: () {
+                        controller.hide();
+                      },
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
       ],
     )
         : Container();
