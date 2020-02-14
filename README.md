@@ -9,7 +9,7 @@ This plugin only supports **Google ReCAPTCHA V2** (v1 & v3 not supported)
 
 Obtain your own key & secret here: https://www.google.com/recaptcha
 
-Add: software-incubator.github.io to allowed domains
+By default plugin uses https://software-incubator.github.io/flutter_recaptcha/ webpage for ReCaptcha rendering. If you would like to stay with this default, add software-incubator.github.io to allowed domains. For using your own page, specify pluginURL parameter.
 
 
 Put `RecaptchaV2` widget into your widget tree (Usually inside `Stack` widget), **make sure it's placed on top of the tree and block all the behind interactions**:
